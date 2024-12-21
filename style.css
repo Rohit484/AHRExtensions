@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+
+/* General styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  height: 500px;
+  width: 700x;
+  background-color: #f4f4f8;
+  padding: 20px;
+}
+
+/* Header styling */
+header {
+  border-radius: 4px;
+  height: 3rem;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0.5rem;
+  width: 100%;
+  background-color: #ff9900; /* Amazon's theme color */
+  color: white;
+}
+
+header img {
+  margin-right: 10px;
+}
+
+/* Main section styling */
+#main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+#fetchReviews {
+  width: 80%;
+  height: 2.5rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #ff9900;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#fetchReviews:hover {
+  background-color: #ff7f00;
+}
+
+.container {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+/* Review list styling */
+#reviews {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+#reviews li {
+  background-color: white;
+  margin-bottom: 1rem;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#reviews li:hover {
+  background-color: #f9f9f9;
+}
+
+#reviews li strong {
+  font-size: 1.1em;
+  color: #333;
+}
+
+#reviews li p {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Add space and margin between items in the list */
+#reviews li + li {
+  margin-top: 10px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+#closeBtn:hover {
+  color: red;
+}
+.popup {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  max-width: 300px;
+  overflow: hidden;
+}

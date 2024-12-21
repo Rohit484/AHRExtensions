@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #comments {
+        list-style-type: none;
+        padding: 0;
+      }
+      #comments li {
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 8px;
+      }
+      #comments li strong {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="out">
+      <header>
+        <img src="./images/scrape-picker.svg" alt="logo" width="28px" />
+        <h3>Amazon & Hacker News</h3>
+      </header>
+      <div id="main">
+        <!-- Button to fetch Amazon reviews -->
+        <button id="fetchReviews">Fetch Top 10 Amazon Comments</button>
+        <div class="container">
+          <ul id="reviews"></ul>
+        </div>
+        <!-- Hacker News comments section -->
+        <ul id="comments"></ul>
+        <ul id="uniqueId"></ul>
+        <!---<ul id="comments"></ul>-->
+      </div>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>

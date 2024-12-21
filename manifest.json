@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit,Hacker News & Amazon Comments Viewer",
+  "version": "1.0",
+  "description": "View top comments from Hacker News Reddit and Amazon reviews",
+  "permissions": ["activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "*://news.ycombinator.com/*",
+    "*://news.ycombinator.com/item*",
+    "*://www.amazon.com/*",
+    "*://www.amazon.in/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/scrape-picker.png",
+      "32": "/images/scrape-picker.png",
+      "48": "/images/scrape-picker.png",
+      "128": "/images/scrape-picker.png"
+    }
+  },
+  "icons": {
+    "16": "/images/scrape-picker.png",
+    "32": "/images/scrape-picker.png",
+    "48": "/images/scrape-picker.png",
+    "128": "/images/scrape-picker.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://news.ycombinator.com/*",
+        "*://news.ycombinator.com/item*",
+        "https://www.reddit.com/*"
+      ],
+      "js": ["content.js"]
+    },
+    {
+      "matches": ["*://www.amazon.com/*", "*://www.amazon.in/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
