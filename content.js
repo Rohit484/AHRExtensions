@@ -86,12 +86,29 @@ document.addEventListener("mouseover", async (event) => {
     }
 
     // Position the popup near the hovered element
+    // const rect = target.getBoundingClientRect();
+    // popup.style.top = `${rect.bottom + window.scrollY}px`;
+    // popup.style.left = `${rect.left + window.scrollX}px`;
+    // popup.style.width = `${Math.max(rect.width / 2, 300)}px`; // Minimum width: 300px
+    // popup.style.height = `${Math.max(rect.height / 2, 200)}px`;
+    // Get the position and dimensions of the target element
     const rect = target.getBoundingClientRect();
-    popup.style.top = `${rect.bottom + window.scrollY}px`;
-    popup.style.left = `${rect.left + window.scrollX}px`;
-    popup.style.width = `${Math.max(rect.width / 2, 300)}px`; // Minimum width: 300px
-    popup.style.height = `${Math.max(rect.height / 2, 200)}px`;
 
+    // Calculate the popup dimensions
+    const popupWidth = Math.max(rect.width / 2, 300); // Minimum width: 300px
+    const popupHeight = Math.max(rect.height / 2, 200); // Minimum height: 200px
+
+    // Set the popup size
+    popup.style.width = `${popupWidth}px`;
+    popup.style.height = `${popupHeight}px`;
+
+    // Position the popup in the center of the target element
+    popup.style.top = `${
+      rect.top + window.scrollY + rect.height / 2 - popupHeight / 2
+    }px`;
+    popup.style.left = `${
+      rect.left + window.scrollX + rect.width / 2 - popupWidth / 2
+    }px`;
     // Ensure the popup is removed when the close button is clicked
     const closeButton = popup.querySelector("button");
     closeButton.addEventListener("click", (event) => {
